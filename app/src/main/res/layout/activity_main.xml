@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/white" />
+
+    <View
+        android:id="@+id/actionsShadow"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_shadow" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actionsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/margin_24">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/actionsContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="cardShutterNotice,btnSearch,btnPickFromGallery" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardShutterNotice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/shadow_background"
+            app:cardCornerRadius="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_12"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_12"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:gravity="center"
+                android:text="@string/tip_tap_shutter"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeLarge" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnSearch"
+            android:layout_width="@dimen/size_search_button"
+            android:layout_height="@dimen/size_search_button"
+            android:layout_marginTop="@dimen/margin_12"
+            app:layout_constraintEnd_toEndOf="@id/cardShutterNotice"
+            app:layout_constraintStart_toStartOf="@id/cardShutterNotice"
+            app:layout_constraintTop_toBottomOf="@id/cardShutterNotice"
+            app:srcCompat="@drawable/bg_search_button" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/btnSearch"
+            app:layout_constraintEnd_toEndOf="@id/btnSearch"
+            app:layout_constraintStart_toStartOf="@id/btnSearch"
+            app:layout_constraintTop_toTopOf="@id/btnSearch" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnPickFromGallery"
+            android:layout_width="@dimen/size_gallery_button"
+            android:layout_height="@dimen/size_gallery_button"
+            app:layout_constraintBottom_toBottomOf="@id/btnSearch"
+            app:layout_constraintEnd_toStartOf="@id/btnSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnSearch"
+            app:srcCompat="@drawable/ic_gallery"
+            app:tint="@color/white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

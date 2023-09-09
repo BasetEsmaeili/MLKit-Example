@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Google Lens</string>
+    <string name="error_camera_permission_required">Camera Permission is required.</string>
+    <string name="allow">Allow</string>
+    <string name="tip_tap_shutter">Tap shutter button to search</string>
+    <string name="error_not_result_found">No result found</string>
+    <string name="error_unknown_file">Unknown File</string>
+    <string name="error_process_video">Process video error</string>
+    <string name="label_developed_by"><a href="https://www.linkedin.com/in/baset-esmaeili/">Developed by: Baset Esmaeili</a></string>
+</resources>
